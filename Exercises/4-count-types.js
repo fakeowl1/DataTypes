@@ -4,10 +4,9 @@ const countTypesInArray = (ArrayOfTypes) => {
   const countTypes = {};
   for (const item of ArrayOfTypes) {
     const type = typeof item;
-    let count = countTypes[type];
-    count = count ? count++ : count = 0;
-    countTypes[type] = count;
-  };
+    const count = countTypes[type] ? countTypes[type] : 0;
+    countTypes[type] = count + 1;
+  }
 
   return countTypes;
 };
